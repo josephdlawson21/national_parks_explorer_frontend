@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import Article from '../components/Article'
 import States from '../data/states.js'
 import {NavLink} from 'react-router-dom'
-import {Button, Dropdown, NavItem} from 'react-materialize'
+import { Dropdown } from 'react-materialize'
+import { connect } from 'react-redux'
+import { fetchFrontPage } from '../actions'
 
 
 class FrontPage extends Component {
@@ -11,7 +13,7 @@ class FrontPage extends Component {
   }
 
   renderArticles = () => {
-    return this.state.articles.map((article, i) => {
+    return this.props.articles.map((article, i) => {
       if (i < 2) {
         return <Article article={article} width="6"/>
       } else {
@@ -27,13 +29,15 @@ class FrontPage extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/parks/frontPageArticles')
-      .then(res => res.json())
-      .then((json) => {
-        this.setState({
-          articles: json.data
-        });
-      })
+    this.props.fetchFrontPage()
+    console.log(this.props.articles);
+    // fetch('http://localhost:3000/parks/frontPageArticles')
+    //   .then(res => res.json())
+    //   .then((json) => {
+    //     this.setState({
+    //       articles: json.data
+    //     });
+    //   })
   }
 
   render() {
@@ -52,13 +56,18 @@ class FrontPage extends Component {
         </div>
         <div className='front-page-card-container container'>
           <div className="row">
-            {this.renderArticles()}
+            {this.props.articles ? this.renderArticles() : null}
           </div>
         </div>
-        <NavLink to='/yo'> hello</NavLink>
       </div>
     );
   }
 }
 
-export default FrontPage;
+const mapStateToProps = state => {
+  return {
+    articles: state.frontPage
+  }
+}
+
+export default connect(mapStateToProps, { fetchFrontPage })(FrontPage);
