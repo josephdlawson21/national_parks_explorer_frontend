@@ -30,14 +30,6 @@ class FrontPage extends Component {
 
   componentDidMount() {
     this.props.fetchFrontPage()
-    console.log(this.props.articles);
-    // fetch('http://localhost:3000/parks/frontPageArticles')
-    //   .then(res => res.json())
-    //   .then((json) => {
-    //     this.setState({
-    //       articles: json.data
-    //     });
-    //   })
   }
 
   render() {
