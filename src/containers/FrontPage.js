@@ -15,16 +15,16 @@ class FrontPage extends Component {
   renderArticles = () => {
     return this.props.articles.map((article, i) => {
       if (i < 2) {
-        return <Article article={article} width="6"/>
+        return <Article key={i} article={article} width="6"/>
       } else {
-        return <Article article={article} width="4"/>
+        return <Article key={i} article={article} width="4"/>
       }
     })
   }
 
   stateOptions = () => {
     return States.map( arr => {
-      return <li><NavLink to={"/state/" + arr[0]}>{arr[1]}</NavLink></li>
+      return <li key={arr[0]} ><NavLink to={"/state/" + arr[0]}>{arr[1]}</NavLink></li>
     })
   }
 
