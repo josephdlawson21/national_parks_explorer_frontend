@@ -29,11 +29,11 @@
 }
 
 .state-row{
-  background-color: green
+  border-bottom-style: groove;
 }
 
 .card{
-  height: 500px;
+  height: a;
 }
 
 /* .article-img{
@@ -47,12 +47,22 @@
   object-fit: cover;
 }
 
-.spanFix {
-  width: 200px;
+/* .spanFix {
+  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+} */
+
+.spanFix {
+  line-height: 1.5em;
+  height: 4em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }
+
+
 
 .stateSelector {
   color: black;

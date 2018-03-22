@@ -26,7 +26,6 @@ class ParkPage extends Component {
   }
 
   render() {
-    console.log(this.props.parkData.park);
     return (
       <div>
         {this.props.isLoading ? <img src="https://cdn-images-1.medium.com/max/1600/1*9EBHIOzhE1XfMYoKz1JcsQ.gif" width="100%" height="100%" /> :
@@ -42,7 +41,6 @@ class ParkPage extends Component {
               <h3>Upcoming Events</h3>
               {this.props.parkData.events.data.length ? this.renderEvents() : "Sorry there are no upcoming events at this park my guy!"}
 
-              <hr/>
 
               <h3>Places</h3>
 

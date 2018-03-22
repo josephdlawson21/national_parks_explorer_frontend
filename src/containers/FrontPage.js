@@ -46,7 +46,10 @@ class FrontPage extends Component {
             </div>
           </div>
         </div>
+
         <div className='front-page-card-container container'>
+          <h3>Articles</h3>
+          <hr/>
           <div className="row">
             {this.props.articles ? this.renderArticles() : null}
           </div>

@@ -10,7 +10,7 @@ const Article = ({article, width}) => {
           <img className="activator" src={article.listingImage.url} alt={article.listingImage.altText}/>
         </div>
         <div className="card-content">
-          <span className="card-title">{article.title}</span>
+          <span className="card-title spanFix">{article.title}</span>
         </div>
         <div className="card-reveal">
           <span className="card-title grey-text text-darken-4">{article.title}<i className="material-icons right">close</i></span>
