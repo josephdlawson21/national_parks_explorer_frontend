@@ -15,8 +15,17 @@
 }
 
 #map {
-  height: 800px;
+  height: 700px;
   width: 100%
+}
+
+.nav-logo {
+  margin-left: 1.5%;
+}
+
+.state-list-option {
+  color: black !important;
+  text-align: center;
 }
 
 .searchBar{

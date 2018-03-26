@@ -2,7 +2,7 @@
 
 import React from 'react'
 import GoogleMapsLoader from 'google-maps'
-import { Link } from 'react-router-dom'
+import MapStyle from '../data/MapStyle.json'
 import APIKEY from '../secrets.js'
 
 GoogleMapsLoader.KEY = APIKEY()
@@ -24,14 +24,12 @@ class CoolMap extends React.Component {
       bounds = new google.maps.LatLngBounds()
       map = new google.maps.Map(document.getElementById('map'), {
         center: this.props.latLong,
-        zoom: 8
+        zoom: 8,
+        styles: MapStyle
       })
       this.props.parkCoords.map(coords => {
         let infoWindow = new google.maps.InfoWindow({
-          // content: "<a href='/park/" + coords.parkCode + "/'>" + coords.name + "</a>"
           content: "<a href='/park/" + coords.parkCode + "/'>" + coords.name + "</a>"
-          // content: coords.name
-          // content: <NavLink to={'/park/'+ coords.stateCode}>{coords.name}</NavLink>
         });
         let h =  new google.maps.Marker({
           position: coords.latLong,
@@ -40,21 +38,17 @@ class CoolMap extends React.Component {
           title: coords.parkCode
         })
 
-        // h.addListener('mouseover', function() {
-        //     infoWindow.open(map, h);
-        // });
-        //
-        // h.addListener('mouseout', function() {
-        //     infoWindow.close();
-        // });
 
         h.addListener('click', (e) => {
-          infoWindow.open(map, h);
-          // window.open("https://bing.com","_self")
-          // console.log(browserHistory);
-          // this.context.router.push("/park/" + e.Fa.target.title)
-         // return <Redirect to={"/park/" + e.Fa.target.title} />
-
+          if (infoWindow.opened) {
+            infoWindow.opened = false
+            h.setAnimation(null)
+            infoWindow.close();
+          } else {
+            infoWindow.opened = true
+            h.setAnimation(google.maps.Animation.BOUNCE)
+            infoWindow.open(map, h);
+          }
         })
 
         return h

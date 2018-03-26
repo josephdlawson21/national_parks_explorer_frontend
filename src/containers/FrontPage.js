@@ -24,7 +24,7 @@ class FrontPage extends Component {
 
   stateOptions = () => {
     return States.map( arr => {
-      return <li key={arr[0]} ><NavLink to={"/state/" + arr[0]}>{arr[1]}</NavLink></li>
+      return <li key={arr[0]} ><NavLink className="state-list-option" to={"/state/" + arr[0]}>{arr[1]}</NavLink></li>
     })
   }
 

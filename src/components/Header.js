@@ -8,7 +8,7 @@ const Header = (props) => {
     <div className="navbar-fixed">
       <nav>
        <div className="nav-wrapper black fixed">
-         <NavLink to={"/"}>National Parks LUL</NavLink>
+         <NavLink className="nav-logo" to={"/"}>National Parks LUL</NavLink>
        </div>
      </nav>
     </div>
