@@ -14,6 +14,11 @@
   grid-area: 8/8/7/1;
 }
 
+#map {
+  height: 800px;
+  width: 100%
+}
+
 .searchBar{
   text-align: center;
   font-size: 25px;

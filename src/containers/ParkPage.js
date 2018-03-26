@@ -28,7 +28,7 @@ class ParkPage extends Component {
   render() {
     return (
       <div>
-        {this.props.isLoading ? <img src="https://cdn-images-1.medium.com/max/1600/1*9EBHIOzhE1XfMYoKz1JcsQ.gif" width="100%" height="100%" /> :
+        {this.props.isLoading ? <img src="https://cdn-images-1.medium.com/max/1600/1*9EBHIOzhE1XfMYoKz1JcsQ.gif" alt="loading" width="100%" height="100%" /> :
           <div>
             <img className="parkImgDiv" src={this.props.parkData.park.data ? this.props.parkData.park.data[0].images[0].url : null} alt=""/>
 
