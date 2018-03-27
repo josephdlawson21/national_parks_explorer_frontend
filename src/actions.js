@@ -9,6 +9,7 @@ export function fetchState(stateCode) {
       .then(res => dispatch({type: 'DONE_LOADING'}))
   };
 }
+
 export function fetchPark(parkCode) {
   return function(dispatch) {
     dispatch({type: 'LOADING'})
@@ -20,6 +21,7 @@ export function fetchPark(parkCode) {
       .then(res => dispatch({type: 'DONE_LOADING'}))
   };
 }
+
 export function fetchFrontPage() {
   return function(dispatch) {
     dispatch({type: 'LOADING'})
@@ -31,6 +33,19 @@ export function fetchFrontPage() {
       .then(res => dispatch({type: 'DONE_LOADING'}));
   };
 }
+
+export function searchForPark(query) {
+  return function(dispatch) {
+    dispatch({type: 'LOADING'})
+    fetch("http://localhost:3000/parks/search/" + query)
+      .then(res => res.json())
+      .then(json => {
+        dispatch({ type: "SEARCH_RESULTS", payload: json.data });
+      })
+      .then(res => dispatch({type: 'DONE_LOADING'}));
+  };
+}
+
 export function clearState() {
   return function(dispatch) {
     dispatch({type: 'CLEARSTATE'})

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { fetchPark, clearState } from '../actions'
+import { Carousel } from 'react-materialize'
 import { connect } from 'react-redux'
 import Event from '../components/Event'
 import Place from '../components/Place'
@@ -10,11 +11,11 @@ class ParkPage extends Component {
 
 
   renderEvents = () => {
-    return this.props.parkData.events.data.map( event => <Event event={event}/>)
+    return this.props.parkData.events.data.map( event => <Event key={event.id} event={event}/>)
   }
 
   renderPlaces = () => {
-    return this.props.parkData.places.data.map( place => <Place place={place}/>)
+    return this.props.parkData.places.data.map( place => <Place key={place.id} place={place}/>)
   }
 
   componentWillUnmount() {
@@ -25,12 +26,22 @@ class ParkPage extends Component {
     this.props.fetchPark(this.props.match.params.parkCode)
   }
 
+  renderCarousel = () => {
+    return this.props.parkData.park.data[0].images.map( park => park.url )
+  }
+
+  handleClick = (e) => {
+    console.log(this);
+  }
+
   render() {
     return (
       <div>
         {this.props.isLoading ? <img src="https://cdn-images-1.medium.com/max/1600/1*9EBHIOzhE1XfMYoKz1JcsQ.gif" alt="loading" width="100%" height="100%" /> :
           <div>
-            <img className="parkImgDiv" src={this.props.parkData.park.data ? this.props.parkData.park.data[0].images[0].url : null} alt=""/>
+
+            {this.props.parkData.park.data ? <Carousel options={{ fullWidth: true }} images={this.renderCarousel()} /> : null}
+
 
             <div className="container">
               <h2>{this.props.parkData.park.data ? He.decode(this.props.parkData.park.data[0].fullName) : null}</h2>

@@ -3,6 +3,7 @@
 import React from 'react'
 import GoogleMapsLoader from 'google-maps'
 import MapStyle from '../data/MapStyle.json'
+import { withRouter } from 'react-router-dom'
 import APIKEY from '../secrets.js'
 
 GoogleMapsLoader.KEY = APIKEY()
@@ -37,6 +38,7 @@ class CoolMap extends React.Component {
           animation: google.maps.Animation.DROP,
           title: coords.parkCode
         })
+
 
 
         h.addListener('click', (e) => {
@@ -79,4 +81,4 @@ class CoolMap extends React.Component {
   }
 }
 
-export default CoolMap;
+export default withRouter(CoolMap);
