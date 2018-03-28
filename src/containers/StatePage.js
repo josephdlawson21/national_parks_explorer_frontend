@@ -7,7 +7,7 @@ import { fetchState, clearState } from '../actions'
 import CoolMap from '../components/CoolMap'
 import geocoder from 'geocoder'
 import StatesGeodata from '../data/statesGeoData.json'
-const APIKEY = process.env.api-key
+const APIKEY = process.env.CHILLAPIKEY
 const APIOBJ = {key: APIKEY}
 
 
