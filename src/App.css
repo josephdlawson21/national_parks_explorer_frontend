@@ -120,7 +120,7 @@
 }
 
 .nav-bar-title {
-  font-size: large;
+  font-size: xx-large;
 }
 
 .state-card-title {
@@ -149,4 +149,14 @@
   margin-left: 25%;
   height: 50%;
   width: 50%;
+}
+
+.navbar-icon {
+  margin-top: -10px;
+}
+
+.navbar-tree {
+  margin-top: 8px;
+  height: 40px;
+  margin-left: 10px;
 }

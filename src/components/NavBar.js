@@ -33,11 +33,14 @@ class Header extends React.Component {
       <div className="navbar-fixed">
         <nav>
          <div className="nav-wrapper black fixed">
-           <NavLink className="nav-logo nav-bar-title" to={"/"}>National Parks Explorer</NavLink>
+
+           <NavLink className="nav-logo" to={"/"}>
+             <img className="navbar-tree" src={require("../data/tree.png")} alt="treeicon"/> <span className="nav-bar-title">National Parks Explorer</span>
+           </NavLink>
            <form className="right search-bar" onSubmit={this.handleSubmit} >
              <div className="input-field">
                <input id="search" type="search" value={this.state.search} placeholder="Search by Park Name" onChange={this.handleChange} required/>
-               <label className="label-icon"><i className="material-icons">search</i></label>
+               <label className="label-icon navbar-icon"><i className="material-icons">search</i></label>
                <i className="material-icons">close</i>
              </div>
            </form>
