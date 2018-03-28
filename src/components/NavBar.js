@@ -36,7 +36,7 @@ class Header extends React.Component {
            <NavLink className="nav-logo nav-bar-title" to={"/"}>National Parks Explorer</NavLink>
            <form className="right search-bar" onSubmit={this.handleSubmit} >
              <div className="input-field">
-               <input id="search" type="search" value={this.state.search} onChange={this.handleChange} required/>
+               <input id="search" type="search" value={this.state.search} placeholder="Search by Park Name" onChange={this.handleChange} required/>
                <label className="label-icon"><i className="material-icons">search</i></label>
                <i className="material-icons">close</i>
              </div>
