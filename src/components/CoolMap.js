@@ -4,7 +4,7 @@ import React from 'react'
 import GoogleMapsLoader from 'google-maps'
 import MapStyle from '../data/MapStyle.json'
 import { withRouter } from 'react-router-dom'
-import APIKEY from '../secrets.js'
+// import APIKEY from '../secrets.js'
 
 GoogleMapsLoader.KEY = APIKEY()
 GoogleMapsLoader.LIBRARIES = ['geometry', 'places', 'drawing']

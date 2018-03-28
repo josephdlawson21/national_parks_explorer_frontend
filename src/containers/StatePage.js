@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import StateCard from '../components/StateCard'
 import States from '../data/states.js'
-import APIKEY from '../secrets.js'
+// import APIKEY from '../secrets.js'
 import { connect } from 'react-redux'
 import { fetchState, clearState } from '../actions'
 import CoolMap from '../components/CoolMap'
