@@ -2,6 +2,7 @@
   "name": "national_parks_explorer_frontend",
   "version": "0.1.0",
   "private": true,
+  "main": "index.js",
   "dependencies": {
     "@google/maps": "^0.4.5",
     "geocoder": "^0.2.3",
@@ -22,5 +23,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "engines": {
+    "node": "6.11.2"
   }
 }
