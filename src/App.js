@@ -10,7 +10,6 @@ import './App.css';
 
 class App extends Component {
   render() {
-    require('dotenv').load()
     return (
       <div className="FrontPage">
         <NavBar />
