@@ -122,3 +122,31 @@
 .nav-bar-title {
   font-size: large;
 }
+
+.state-card-title {
+  margin-top: 0%;
+  margin-bottom: 1%;
+}
+
+.state-card-body {
+  margin-top: 0%;
+}
+
+.park-page-state-link-div {
+  margin-top: 3%;
+}
+
+.park-page-state-link {
+  font-size: large;
+  color: black;
+}
+
+.park-page-title {
+  margin-top: 2%;
+}
+
+.loading-image {
+  margin-left: 25%;
+  height: 50%;
+  width: 50%;
+}

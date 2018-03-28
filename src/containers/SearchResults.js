@@ -21,11 +21,12 @@ class SearchResults extends React.Component {
   render() {
     return (
       <div>
+        {this.props.isLoading ? <img className="loading-image" src="https://cdn-images-1.medium.com/max/1600/1*9EBHIOzhE1XfMYoKz1JcsQ.gif" alt="loading" /> :
         <div className='container'>
           <h1>Search Results</h1>
           <hr/>
           {this.renderResults()}
-        </div>
+        </div>}
       </div>
     )
   }
@@ -34,6 +35,7 @@ class SearchResults extends React.Component {
 
 const mapStateToProps = state => {
   return {
+    isLoading: state.isLoading,
     searchResults: state.searchResults
   }
 }

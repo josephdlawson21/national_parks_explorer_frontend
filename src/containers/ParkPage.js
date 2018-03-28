@@ -5,10 +5,16 @@ import { connect } from 'react-redux'
 import Event from '../components/Event'
 import Place from '../components/Place'
 import He from 'he'
+import States from '../data/states.js'
+import { NavLink } from 'react-router-dom'
+
 
 class ParkPage extends Component {
 
-
+  getState = () => {
+    let selectedState = States.filter(s => s[0] === this.props.parkData.park.data[0].states.slice(0,2))
+    return selectedState[0][1]
+  }
 
   renderEvents = () => {
     return this.props.parkData.events.data.map( event => <Event key={event.id} event={event}/>)
@@ -27,7 +33,11 @@ class ParkPage extends Component {
   }
 
   renderCarousel = () => {
-    return this.props.parkData.park.data[0].images.map( park => park.url )
+    if (this.props.parkData.park.data[0].images.length) {
+      return this.props.parkData.park.data[0].images.map( park => park.url )
+    } else {
+      return ["http://www.kickoff.com/chops/images/resized/large/no-image-found.jpg"]
+    }
   }
 
   handleClick = (e) => {
@@ -35,16 +45,20 @@ class ParkPage extends Component {
   }
 
   render() {
+
     return (
       <div>
-        {this.props.isLoading ? <img src="https://cdn-images-1.medium.com/max/1600/1*9EBHIOzhE1XfMYoKz1JcsQ.gif" alt="loading" width="100%" height="100%" /> :
+        {this.props.isLoading ? <img className="loading-image" src="https://cdn-images-1.medium.com/max/1600/1*9EBHIOzhE1XfMYoKz1JcsQ.gif" alt="loading" /> :
           <div>
 
             {this.props.parkData.park.data ? <Carousel options={{ fullWidth: true }} images={this.renderCarousel()} /> : null}
 
 
             <div className="container">
-              <h2>{this.props.parkData.park.data ? He.decode(this.props.parkData.park.data[0].fullName) : null}</h2>
+              <div className="park-page-state-link-div" >
+                  {this.props.parkData.park.data ? <NavLink className="park-page-state-link" to={"/state/" + this.props.parkData.park.data[0].states.slice(0,2) }>{this.getState()}</NavLink> : null}
+              </div>
+              <h2 className="park-page-title">{this.props.parkData.park.data ? He.decode(this.props.parkData.park.data[0].fullName) : null}</h2>
 
               <p>{this.props.parkData.park.data ? this.props.parkData.park.data[0].description : null}</p>
               <hr/>
