@@ -7,7 +7,8 @@ import { fetchState, clearState } from '../actions'
 import CoolMap from '../components/CoolMap'
 import geocoder from 'geocoder'
 import StatesGeodata from '../data/statesGeoData.json'
-const APIOBJ = {key: APIKEY()}
+const APIKEY = process.env.api-key
+const APIOBJ = {key: APIKEY}
 
 
 class StatePage extends Component {
