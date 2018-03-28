@@ -6,7 +6,6 @@ import MapStyle from '../data/MapStyle.json'
 import { withRouter } from 'react-router-dom'
 // import APIKEY from '../secrets.js'
 const APIKEY = process.env.REACT_APP_API_KEY
-console.log(process.env.REACT_APP_API_KEY)
 
 
 GoogleMapsLoader.KEY = APIKEY

@@ -8,7 +8,6 @@ import CoolMap from '../components/CoolMap'
 import geocoder from 'geocoder'
 import StatesGeodata from '../data/statesGeoData.json'
 const APIKEY = process.env.REACT_APP_API_KEY
-console.log(process.env.REACT_APP_API_KEY)
 const APIOBJ = {key: APIKEY}
 
 
