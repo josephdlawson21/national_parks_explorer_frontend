@@ -1,4 +1,5 @@
 
+
 .frontPageImgDiv{
   display: grid;
   grid-template-columns: 100px;
@@ -126,6 +127,13 @@
 .state-card-title {
   margin-top: 0%;
   margin-bottom: 1%;
+}
+
+.stateCardLeft > a:hover {
+  text-decoration: underline;
+}
+.park-page-state-link-div > a:hover {
+  text-decoration: underline;
 }
 
 .state-card-body {
