@@ -16,6 +16,10 @@ class ParkPage extends Component {
     return selectedState[0][1]
   }
 
+  handleClick = (e) => {
+    console.log(e);
+  }
+
   renderEvents = () => {
     return this.props.parkData.events.data.map( event => <Event key={event.id} event={event}/>)
   }
@@ -41,7 +45,7 @@ class ParkPage extends Component {
   }
 
   handleClick = (e) => {
-    console.log(this);
+    console.log(e.target.parentElement.parentElement)
   }
 
   render() {
@@ -51,7 +55,7 @@ class ParkPage extends Component {
         {this.props.isLoading ? <img className="loading-image" src="https://cdn-images-1.medium.com/max/1600/1*9EBHIOzhE1XfMYoKz1JcsQ.gif" alt="loading" /> :
           <div>
 
-            {this.props.parkData.park.data ? <Carousel options={{ fullWidth: true }} images={this.renderCarousel()} /> : null}
+            {this.props.parkData.park.data ? <Carousel options={{ fullWidth: true, indicators: true }} images={this.renderCarousel()} /> : null}
 
 
             <div className="container">
