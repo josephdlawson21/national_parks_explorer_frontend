@@ -6,7 +6,7 @@ import MapStyle from '../data/MapStyle.json'
 import { withRouter } from 'react-router-dom'
 // import APIKEY from '../secrets.js'
 const APIKEY = process.env.CHILLAPIKEY
-console.log(ENV["CHILLAPIKEY"])
+console.log(process.env.CHILLAPIKEY)
 
 
 GoogleMapsLoader.KEY = APIKEY
