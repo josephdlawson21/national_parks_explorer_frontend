@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "@google/maps": "^0.4.5",
+    "dotenv": "^5.0.1",
     "geocoder": "^0.2.3",
     "google-maps": "^3.2.1",
     "react": "^16.2.0",

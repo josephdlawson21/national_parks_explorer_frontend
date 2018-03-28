@@ -16,6 +16,7 @@ const store = createStore(
 
 
 ReactDOM.render(
+  {require('dotenv').load()}
   <Provider store={store}>
     <BrowserRouter>
       <App />
