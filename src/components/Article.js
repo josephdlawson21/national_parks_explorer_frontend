@@ -3,6 +3,7 @@
 import React from 'react'
 
 const Article = ({article, width}) => {
+  console.log('Article.jsx', article, article.listingImage, article.listingImage.url)
   return (
     <div className={`col s${width}`}>
       <div className="card">
