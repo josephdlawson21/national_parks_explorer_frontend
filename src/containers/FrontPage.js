@@ -14,6 +14,7 @@ class FrontPage extends Component {
 
   renderArticles = () => {
     return this.props.articles.map((article, i) => {
+      console.log('article', article)
       if (i < 2) {
         return <Article key={i} article={article} width="6"/>
       } else {
