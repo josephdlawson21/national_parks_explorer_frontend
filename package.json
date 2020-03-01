@@ -9,7 +9,7 @@
     "geocoder": "^0.2.3",
     "google-maps": "^3.2.1",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react-dom": "^16.2.1",
     "react-google-maps": "^9.4.5",
     "react-leaflet": "^1.9.1",
     "react-materialize": "^2.1.2",
